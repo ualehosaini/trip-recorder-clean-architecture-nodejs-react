@@ -6,13 +6,17 @@ class TripRepository {
         if (!startDate || !endDate) {
             throw new Error('Invalid start date or end date');
         }
-        
+
+        // Parse the dates to ensure they are in the correct format
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
         const results = await Trip.aggregate([
             // Filter trips within the provided start and end date range
             {
                 $match: {
-                    startDate: { $gte: startDate },
-                    endDate: { $lte: endDate }
+                    startDate: { $gte: start },
+                    endDate: { $lte: end }
                 }
             },
             // Group by vehicle registration to calculate total distance

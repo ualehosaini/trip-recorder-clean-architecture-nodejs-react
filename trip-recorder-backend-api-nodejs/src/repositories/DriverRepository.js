@@ -6,11 +6,17 @@ class DriverRepository {
     }
 
     async createDriver(value) {
+        if (!value) {
+            throw new Error('Invalid driver data');
+        }
         const newValue = new Driver(value);
         return await newValue.save();
     }
 
     async updateDriver(code, value) {
+        if (!code || !value) {
+            throw new Error('Invalid code or driver data');
+        }
         const updatedValue = await Driver.findOneAndUpdate(
             { code },
             value,
@@ -20,6 +26,9 @@ class DriverRepository {
     }
 
     async deleteDriver(code) {
+        if (!code) {
+            throw new Error('Invalid code');
+        }
         const deletedValue = await Driver.findOneAndDelete({ code });
         return deletedValue;
     }

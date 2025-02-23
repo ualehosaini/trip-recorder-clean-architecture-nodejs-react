@@ -6,11 +6,17 @@ class VehicleRepository {
     }
 
     async createVehicle(value) {
+        if (!value) {
+            throw new Error('Invalid vehicle data');
+        }
         const newValue = new Vehicle(value);
         return await newValue.save();
     }
 
     async updateVehicle(registration, value) {
+        if (!registration || !value) {
+            throw new Error('Invalid registration or vehicle data');
+        }
         const updatedValue = await Vehicle.findOneAndUpdate(
             { registration: registration },
             value,
@@ -20,6 +26,9 @@ class VehicleRepository {
     }
 
     async deleteVehicle(registration) {
+        if (!registration) {
+            throw new Error('Invalid registration');
+        }
         const deletedValue = await Vehicle.findOneAndDelete({ registration: registration });
         return deletedValue;
     }

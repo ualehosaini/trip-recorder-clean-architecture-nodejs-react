@@ -3,6 +3,10 @@ const VehicleWiseMillage = require("../models/Reports/VehicleWiseMillage");
 
 class TripRepository {
     async getVehicleWiseMillage(startDate, endDate) {
+        if (!startDate || !endDate) {
+            throw new Error('Invalid start date or end date');
+        }
+        
         const results = await Trip.aggregate([
             // Filter trips within the provided start and end date range
             {

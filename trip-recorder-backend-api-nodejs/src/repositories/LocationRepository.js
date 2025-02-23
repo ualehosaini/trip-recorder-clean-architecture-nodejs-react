@@ -6,11 +6,17 @@ class LocationRepository {
     }
 
     async createLocation(value) {
+        if (!value) {
+            throw new Error('Invalid location data');
+        }
         const newValue = new Location(value);
         return await newValue.save();
     }
 
     async updateLocation(shortName, value) {
+        if (!shortName || !value) {
+            throw new Error('Invalid short name or location data');
+        }
         const updatedValue = await Location.findOneAndUpdate(
             { shortName: shortName },
             value,
@@ -20,6 +26,9 @@ class LocationRepository {
     }
 
     async deleteLocation(shortName) {
+        if (!shortName) {
+            throw new Error('Invalid short name');
+        }
         const deletedValue = await Location.findOneAndDelete({ shortName: shortName });
         return deletedValue;
     }

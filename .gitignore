@@ -1,0 +1,15 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables (MongoDB credentials, API keys, etc.)
+.env
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode settings (local configs should not be in version control)
+.vscode/

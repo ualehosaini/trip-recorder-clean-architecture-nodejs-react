@@ -10,6 +10,16 @@ class DriverController {
         }
     }
 
+    async getDriver(req, res) {
+        try {
+            const { code } = req.params;
+            const value = await driverService.getDriver(code);
+            res.json(value);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async createDriver(req, res) {
         try {
             const value = req.body;

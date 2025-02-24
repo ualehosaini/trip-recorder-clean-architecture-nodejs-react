@@ -5,6 +5,13 @@ class DriverRepository {
         return await Driver.find();
     }
 
+    async getDriver(code) {
+        if (!code) {
+            throw new Error('Invalid code');
+        }
+        return await Driver.findOne({ code });
+    }
+
     async createDriver(value) {
         if (!value) {
             throw new Error('Invalid driver data');

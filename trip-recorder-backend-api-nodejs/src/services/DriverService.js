@@ -5,6 +5,11 @@ class DriverService {
         return await driverRepository.getDrivers();
     }
 
+    async getDriver(code) {
+        if (!code) throw new Error('Driver code must be provided');
+        return await driverRepository.getDriver(code);
+    }
+
     async createDriver(value) {
         if (!value) throw new Error('Driver data must be provided');
         return await driverRepository.createDriver(value);

@@ -16,6 +16,7 @@ router.delete("/vehicle/:registration", VehicleController.deleteVehicle);
 
 // Driver routes
 router.get("/driver", DriverController.getDrivers);
+router.get("/driver/:code", DriverController.getDriver);
 router.post("/driver", DriverController.createDriver);
 router.put("/driver/:code", DriverController.updateDriver);
 router.delete("/driver/:code", DriverController.deleteDriver);

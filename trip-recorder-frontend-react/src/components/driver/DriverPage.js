@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DriverForm from '../components/driver/DriverForm';
-import DriverList from '../components/driver/DriverList';
+import DriverForm from './DriverForm';
+import DriverList from './DriverList';
 
 const DriverPage = () => {
   const [selectedDriverCode, setSelectedDriverCode] = useState(null);

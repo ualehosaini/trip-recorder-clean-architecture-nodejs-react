@@ -5,6 +5,13 @@ class TripRepository {
         return await Trip.find();
     }
 
+    async getTrip(id) {
+        if (!id) {
+            throw new Error('Invalid id');
+        }
+        return await Trip.findById({ _id: id });
+    }
+
     async createTrip(value) {
         if (!value) {
             throw new Error('Invalid trip data');

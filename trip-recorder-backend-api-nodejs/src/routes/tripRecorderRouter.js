@@ -31,6 +31,7 @@ router.delete("/location/:shortName", LocationController.deleteLocation);
 
 // Trip routes
 router.get("/trip", TripController.getTrips);
+router.get("/trip/:id", TripController.getTrip);
 router.post("/trip", TripController.createTrip);
 router.put("/trip/:id", TripController.updateTrip);
 router.delete("/trip/:id", TripController.deleteTrip);

@@ -5,20 +5,25 @@ class TripService {
         return await tripRepository.getTrips();
     }
 
+    async getTrip(id) {
+        if (!id) throw new Error('Trip id must be provided');
+        return await tripRepository.getTrip(id);
+    }
+
     async createTrip(value) {
         if (!value) throw new Error('Trip data must be provided');
         return await tripRepository.createTrip(value);
     }
 
-    async updateTrip(code, value) {
-        if (!code) throw new Error('Trip code must be provided');
+    async updateTrip(id, value) {
+        if (!id) throw new Error('Trip id must be provided');
         if (!value) throw new Error('Trip data must be provided');
-        return await tripRepository.updateTrip(code, value);
+        return await tripRepository.updateTrip(id, value);
     }
 
-    async deleteTrip(code) {
-        if (!code) throw new Error('Trip code must be provided');
-        return await tripRepository.deleteTrip(code);
+    async deleteTrip(id) {
+        if (!id) throw new Error('Trip id must be provided');
+        return await tripRepository.deleteTrip(id);
     }
 }
 

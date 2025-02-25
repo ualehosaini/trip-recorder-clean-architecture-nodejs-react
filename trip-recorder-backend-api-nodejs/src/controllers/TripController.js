@@ -10,6 +10,16 @@ class TripController {
         }
     }
 
+    async getTrip(req, res) {
+        try {
+            const { id } = req.params;
+            const value = await tripService.getTrip(id);
+            res.json(value);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async createTrip(req, res) {
         try {
             const value = req.body;

@@ -5,6 +5,13 @@ class LocationRepository {
         return await Location.find();
     }
 
+    async getLocation(shortName) {
+        if (!shortName) {
+            throw new Error('Invalid short name');
+        }
+        return await Location.findOne({ shortName: shortName });
+    }
+
     async createLocation(value) {
         if (!value) {
             throw new Error('Invalid location data');

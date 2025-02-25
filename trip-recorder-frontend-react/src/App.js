@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import DriverPage from './components/driver/DriverPage';
-// Import other pages as needed
+import LocationPage from './components/location/LocationPage';
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/drivers" element={<DriverPage />} />
-          {/* Add other routes here */}
+          <Route path="/locations" element={<LocationPage />} />
         </Routes>
       </Layout>
     </Router>

@@ -23,6 +23,7 @@ router.delete("/driver/:code", DriverController.deleteDriver);
 
 // Location routes
 router.get("/location", LocationController.getLocations);
+router.get("/location/:shortName", LocationController.getLocation);
 router.post("/location", LocationController.createLocation);
 router.put("/location/:shortName", LocationController.updateLocation);
 router.delete("/location/:shortName", LocationController.deleteLocation);

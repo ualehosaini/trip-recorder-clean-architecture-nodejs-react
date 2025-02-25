@@ -10,6 +10,16 @@ class LocationController {
         }
     }
 
+    async getLocation(req, res) {
+        try {
+            const { shortName } = req.params;
+            const value = await locationService.getLocation(shortName);
+            res.json(value);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async createLocation(req, res) {
         try {
             const value = req.body;

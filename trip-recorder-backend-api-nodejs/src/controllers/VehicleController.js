@@ -10,6 +10,16 @@ class VehicleController {
         }
     }
 
+    async getVehicle(req, res) {
+        try {
+            const { registration } = req.params;
+            const value = await vehicleService.getVehicle(registration);
+            res.json(value);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+
     async createVehicle(req, res) {
         try {
             const value = req.body;

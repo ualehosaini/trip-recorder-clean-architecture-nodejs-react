@@ -10,6 +10,7 @@ const router = express.Router();
 
 // Vehicle routes
 router.get("/vehicle", VehicleController.getVehicles);
+router.get("/vehicle/:registration", VehicleController.getVehicle);
 router.post("/vehicle", VehicleController.createVehicle);
 router.put("/vehicle/:registration", VehicleController.updateVehicle);
 router.delete("/vehicle/:registration", VehicleController.deleteVehicle);

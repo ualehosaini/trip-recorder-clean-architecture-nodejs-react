@@ -5,6 +5,14 @@ class VehicleRepository {
         return await Vehicle.find();
     }
 
+    async getVehicle(registration) {
+        if (!registration) {
+            throw new Error('Invalid registration');
+        }
+        return await Vehicle.findOne({ registration: registration });
+    }
+
+
     async createVehicle(value) {
         if (!value) {
             throw new Error('Invalid vehicle data');

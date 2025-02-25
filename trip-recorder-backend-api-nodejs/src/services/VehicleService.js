@@ -5,20 +5,25 @@ class VehicleService {
         return await vehicleRepository.getVehicles();
     }
 
+    async getVehicle(registration) {
+        if (!registration) throw new Error('Location registration must be provided');
+        return await vehicleRepository.getVehicle(registration);
+    }
+
     async createVehicle(value) {
         if (!value) throw new Error('Vehicle data must be provided');
         return await vehicleRepository.createVehicle(value);
     }
 
-    async updateVehicle(code, value) {
-        if (!code) throw new Error('Vehicle code must be provided');
+    async updateVehicle(registration, value) {
+        if (!registration) throw new Error('Vehicle registration must be provided');
         if (!value) throw new Error('Vehicle data must be provided');
-        return await vehicleRepository.updateVehicle(code, value);
+        return await vehicleRepository.updateVehicle(registration, value);
     }
 
-    async deleteVehicle(code) {
-        if (!code) throw new Error('Vehicle code must be provided');
-        return await vehicleRepository.deleteVehicle(code);
+    async deleteVehicle(registration) {
+        if (!registration) throw new Error('Vehicle registration must be provided');
+        return await vehicleRepository.deleteVehicle(registration);
     }
 }
 

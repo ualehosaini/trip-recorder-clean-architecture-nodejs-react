@@ -1,0 +1,38 @@
+.report-page {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-page h1 {
+    text-align: center;
+    color: #333;
+}
+
+.date-picker-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.date-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-picker label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.date-picker input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}

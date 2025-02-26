@@ -14,10 +14,13 @@ const Layout = ({ children }) => {
       <header className="header">
         <div></div>
         <nav className="menu">
-          <ul>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/register">Register</Link></li>
-          </ul>
+          <div className="avatar">
+            <img src="/static/sample-user-av.jfif" alt="User Avatar" />
+            <div className="dropdown-content">
+              <Link to="/login">Login</Link>
+              <Link to="/logout">Logout</Link>
+            </div>
+          </div>
         </nav>
       </header>
       <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>

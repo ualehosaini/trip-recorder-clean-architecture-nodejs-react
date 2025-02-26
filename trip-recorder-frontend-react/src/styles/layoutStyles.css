@@ -115,6 +115,7 @@
     display: block;
     width: 100%;
     text-align: left;
+    padding-left: 5px;
 }
 
 .menu-button:hover {
@@ -123,4 +124,46 @@
 
 .menu-button:focus {
     outline: none;
+}
+
+/* Avatar and dropdown styles */
+.avatar {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    margin-right: -15px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 6px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.avatar:hover .dropdown-content {
+    display: block;
 }

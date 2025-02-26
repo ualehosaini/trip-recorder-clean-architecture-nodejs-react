@@ -43,7 +43,7 @@ button {
     margin-right: 10px;
     padding: 5px 10px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #5281ce;
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #07398a;
 }
 
 button.delete {
